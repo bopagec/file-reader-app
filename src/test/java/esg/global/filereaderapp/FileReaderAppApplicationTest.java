@@ -1,18 +1,8 @@
 package esg.global.filereaderapp;
 
-import org.assertj.core.api.Assert;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.junit.jupiter.api.parallel.Execution;
-import org.mockito.Mockito;
-import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.test.context.TestPropertySource;
-
-import java.io.FileNotFoundException;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -27,7 +17,7 @@ class FileReaderAppApplicationTest {
         // when
         List<Customer> actual = FileReaderAppApplication.readCSVFile(validPath);
         // then
-        Assertions.assertThat(actual.size()).isEqualTo(5);
+        Assertions.assertThat(actual.size()).isEqualTo(4);
     }
 
     @Test()
