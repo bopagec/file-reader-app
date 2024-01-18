@@ -28,7 +28,12 @@ public class FileReaderAppApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args){
-		if(args.length != 1) return;
+		if(args.length != 1){
+			log.error("file name not provided");
+			return;
+		};
+
+		log.info("file name: {}", args[0]);
 
 		List<Customer> recordList = readCSVFile(args[0]);
 
