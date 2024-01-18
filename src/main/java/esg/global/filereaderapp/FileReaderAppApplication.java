@@ -23,22 +23,22 @@ import java.util.List;
 public class FileReaderAppApplication implements CommandLineRunner {
 	private final WebClient webClient;
 
-	@Value("${path}")
-	private String path;
+	@Value("${filePath}")
+	private String filePath;
 	public static void main(String[] args) {
 		SpringApplication.run(FileReaderAppApplication.class, args);
 	}
 
 	@Override
 	public void run(String... args){
-		if(path == null || path.isBlank()){
+		if(filePath == null || filePath.isBlank()){
 			log.error("file name not provided");
 			return;
 		};
 
-		log.info("file name: {}", path);
+		log.info("file name: {}", filePath);
 
-		List<Customer> recordList = readCSVFile(path);
+		List<Customer> recordList = readCSVFile(filePath);
 
 		for(Customer customer : recordList) {
 			ResponseEntity<Customer> response = sendCustomerData(customer);
