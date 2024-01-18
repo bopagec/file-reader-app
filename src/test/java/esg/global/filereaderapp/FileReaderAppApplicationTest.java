@@ -82,7 +82,7 @@ class FileReaderAppApplicationTest {
     @DisplayName("given none existence file when reads then throws RuntimeException")
     public void givenNoneExistenceFile_whenReadsCSVFile_thenThrowsRuntimeException(){
         // given
-        String invalidPath = "/Users/pohodhika.bopage/MyRepos/file-reader-app/wrong-file.csv";
+        String invalidPath = "wrong-file.csv";
         // when
         RuntimeException runtimeException = assertThrows(RuntimeException.class, () -> FileReaderAppApplication.readCSVFile(invalidPath));
         // then
