@@ -4,7 +4,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -21,10 +20,6 @@ import java.util.List;
 @RequiredArgsConstructor
 @Slf4j
 public class FileReaderAppApplication implements CommandLineRunner {
-
-	@Value("${filePath}")
-	private String filePath;
-
 	private final WebClient webClient;
 
 	public static void main(String[] args) {
@@ -33,7 +28,9 @@ public class FileReaderAppApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args){
-		List<Customer> recordList = readCSVFile(filePath);
+		if(args.length != 1) return;
+
+		List<Customer> recordList = readCSVFile(args[0]);
 
 		for(Customer customer : recordList) {
 			ResponseEntity<Customer> response = sendCustomerData(customer);
