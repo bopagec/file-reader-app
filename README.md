@@ -1,4 +1,4 @@
-## Solution
+## Solution for Exercise 1
 * Developed a Spring Boot Command Line Runner App that accepts `filePath` as an 
 argument of the `csv` file that contains customer details.
 
@@ -40,3 +40,9 @@ The following Technologies have been used to develop both applications.
 * apache-commons-csv
 * JUnit 5
 * Mockito
+
+## Solution for Exercise 2
+
+* StringCalculator `kata` exercise can be found in here
+  https://github.com/bopagec/StringCalculator.git
+* StringCalculator has been implemented and has covered first 6 requirements
