@@ -1,7 +1,7 @@
 spring:
   main:
     web-application-type: none
-filePath: file-name.csv
+
 #filePath: /Users/pohodhika.bopage/MyRepos/file-reader-app/customers.csv
 customer-api:
   url: http://localhost:8080
